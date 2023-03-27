@@ -21,7 +21,10 @@ export const HeaderContent = styled.div`
     
 
 
-button{
+
+`
+export const MenuButton = styled.button`
+ 
     padding: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
@@ -29,13 +32,15 @@ button{
     background-color:transparent;
     border: none;
     border-radius:0.5rem;
-    transition: 0.3s;
-
+  
 
     :hover{
         background-color:${props => props.theme["gray-100"]};
         color: ${props => props.theme["black"]};
         transition: 0.3s
     }
-}
+
+   
+
 `
+
