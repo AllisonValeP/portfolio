@@ -1,4 +1,4 @@
-import { HeaderContainer,HeaderContent, MenuButton } from './styles'
+import { HeaderContainer,HeaderContent, MenuButton,DropdownContainer } from './styles'
 import { NavLink } from 'react-router-dom'
 
 import React,{useState} from 'react';
@@ -14,31 +14,30 @@ return (
             </NavLink>
             
              <HeaderContent> {/*menu */}
-                <MenuButton onClick={() =>{setOpen(!open)}}>
+                <MenuButton onClick={() =>console.log('clique')}>
                     Imagens
                 </MenuButton>
 
-                <NavLink to="/videos" title="Videos">
-                    <button>Videos</button>
-               </NavLink>
+                <MenuButton onClick={() =>{setOpen(!open)}}>
+                    Videos
+                </MenuButton>
             </HeaderContent>
 
-           
-                <ul>
+                <DropdownContainer variant={'desative'}>
                    <DropdownItem title="Rastros" rote="/rastros"/>
                    <DropdownItem title="Videos" rote="/videos"/>
-                </ul>
+                </DropdownContainer>
           
         </HeaderContainer>
         
 )
   function DropdownItem(props){
-    return(
-        <li>
-            <NavLink to={props.rote} title="Rastros">
-                <a>{props.title}</a>
-            </NavLink>
-        </li>
+    return( 
+            <ul>
+                <NavLink to={props.rote}>
+                    {props.title}
+                </NavLink>
+            </ul>
     );
   }
 }

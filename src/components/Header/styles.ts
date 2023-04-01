@@ -7,7 +7,6 @@ export const HeaderContainer = styled.header`
     justify-content:space-between;
     padding: 1.5rem 7.5rem 1.5rem; 
    
-   
  span{
     color: ${props => props.theme["white"]};
 };
@@ -18,10 +17,6 @@ export const HeaderContent = styled.div`
     display:flex;
     justify-content: space-between;
     gap: 3rem;
-    
-
-
-
 `
 export const MenuButton = styled.button`
  
@@ -33,14 +28,16 @@ export const MenuButton = styled.button`
     border: none;
     border-radius:0.5rem;
   
-
     :hover{
         background-color:${props => props.theme["gray-100"]};
         color: ${props => props.theme["black"]};
         transition: 0.3s
     }
-
-   
-
 `
 
+interface DropdownContainerType {
+    variant: 'desative' | 'active'
+}
+export const DropdownContainer = styled.li<DropdownContainerType>`
+    display: ${props => props.variant === 'desative' ? props.theme.desativeDropdown : props.theme.activeDropdown};
+`
